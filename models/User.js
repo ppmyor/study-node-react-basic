@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
   }, // 유저의 역할(관리자, 일반유저 ...)
   image: String,
   token: {
-    type: toString,
+    type: String,
   }, // 유효성 관리
   tokenExp: {
     type: Number,
