@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = 4000;
 
+const config = require("./config/key");
+
 const bodyParser = require("body-parser");
 const { User } = require("./models/User");
 
@@ -10,12 +12,12 @@ app.use(bodyParser.json());
 
 const mongoose = require("mongoose");
 mongoose
-  .connect("mongodb+srv://anna:abcd1234@boiler-plate.vms94mj.mongodb.net/?retryWrites=true&w=majority")
+  .connect(config.mongoURI)
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World!!!!");
 });
 
 app.post("/register", (req, res) => {
