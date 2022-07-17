@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 4000;
 
 const config = require("./config/key");
 
@@ -26,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/hello", (req, res) => {
-  res.send("안녕하세요!");
+  res.send("안녕하세요! proxy test입니다.");
 });
 
 app.post("/api/users/register", (req, res) => {
@@ -82,6 +81,8 @@ app.get("/api/users/logout", auth, (req, res) => {
     });
   });
 });
+
+const port = 4000;
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
