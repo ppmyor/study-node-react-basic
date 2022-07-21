@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema({
   }, // 유저의 이메일
   password: {
     type: String,
-    minlength: 40,
+    minlength: 7,
   }, //유저의 비밀번호
   lastname: {
     type: String,
